@@ -1,0 +1,5 @@
+library(maps)
+       library(ggplot2)
+timok = get_map(location = "timok", zoom=10)
+ggmap(timok)
+geocode("Timok", source="google")

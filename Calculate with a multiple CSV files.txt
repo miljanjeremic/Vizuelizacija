@@ -1,0 +1,62 @@
+library(xlsx)
+mydata <- read.xlsx("Padavine 1946-2015.xlsx", sheetName = "Nis")
+head(mydata)
+
+sapply(mydata$PRECIPITATION, mean, na.rm=TRUE)
+
+library(psych)
+describe(mydata)
+
+count<-ddply(data,.(Year), summarize, freq=length(Year))
+ sum<-ddply(data,.(Year),summarize,tot=sum(income)/12)
+ 
+ ddply(mydata, .(Year), numcolwise(mean))
+
+ddply(mydata, .(Year), numcolwise(mean))
+
+ddply(mydata, .(Year), numcolwise(mean))
+
+
+cdata <- ddply(mydata, c("Year"), summarise, N = sum(PRECIPITATION)/12)
+cdata
+
+
+relation <- lm(mydata$Year~mydata$PRECIPITATION)
+ print(relation)
+
+lm(formula = mydata$Year ~ mydata$PRECIPITATION)
+
+#Coefficients:
+ 
+ #(Intercept)  mydata$PRECIPITATION  
+  #         1.978e+03             5.121e-02  
+
+ lm(formula = mydata$Year~mydata$PRECIPITATION)
+
+
+lm(formula = mydata$Year ~ mydata$PRECIPITATION)
+
+#Coefficients:
+#         (Intercept)  mydata$PRECIPITATION  
+#           1.978e+03             5.121e-02
+
+
+cdata <- ddply(mydata, c(), summarise, N = sum(PRECIPITATION)/840)
+ cdata
+
+
+
+
+cdata <- ddply(mydata, c("Year"), summarise, N = sum(PRECIPITATION))> cdata
+
+
+cdata1 <- mydata[,]
+ cdata1
+
+
+
+cdata111 <- ddply(cdata, c(), summarise, God.Padavine1 = sum(God.Padavine)/70,  N    = length(God.Padavine), mean = mean(God.Padavine),  sd   = sd(God.Padavine), se   = sd *100/mean)
+ cdata111
+
+#.id God.Padavine1  N     mean       sd       se
+#1 <NA>      584.2429 70 584.2429 116.8314 19.99705
